@@ -1,0 +1,11 @@
+- name: Add the user "dmitriy.semin" 
+  ansible.builtin.user:
+    name: dmitriy.semin
+    groups: sudo
+    append: yes
+
+- name: Set ssh key taken from file
+  ansible.posix.authorized_key:
+    user: dmitriy.semin
+    state: present
+    key: "{{ lookup('file', 'config-files/itglobal.pub') }}"

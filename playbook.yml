@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+    - import_tasks:   roles/upgrade.yml
+    - import_tasks:   roles/adduser.yml
+    - import_tasks:   roles/install.yml
+    - import_tasks:   roles/sshd.yml
+    - import_tasks:   roles/nginx.yml

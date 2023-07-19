@@ -1,0 +1,25 @@
+  - name:  Configure nginx
+    ansible.builtin.copy:
+     src: config-files/default
+     dest: /etc/nginx/sites-available/
+     owner: root
+     group: root
+     mode: '0644'
+     backup: yes
+     
+  - name: Install nginx
+    apt:
+      name: nginx
+      state: latest
+      
+  - name:  Copy html
+    ansible.builtin.copy:
+     src: config-files/index.html
+     dest: /var/www/html/
+     owner: root
+     group: root
+     mode: '0644'
+
+  - name:  restart nginx
+    shell:
+     cmd: "systemctl restart nginx"

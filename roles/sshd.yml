@@ -1,0 +1,14 @@
+ - name:  Ssh password login disable
+   ansible.builtin.replace:
+    path: /etc/ssh/sshd_config
+    regexp: 'PasswordAuthentication yes'
+    replace: 'PasswordAuthentication no'
+
+ - name:  Port 10022
+   ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    line: 'Port 10022'
+    
+ - name: restart sshd
+   shell:
+    cmd: "systemctl restart sshd"

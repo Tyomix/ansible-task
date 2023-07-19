@@ -1,0 +1,3 @@
+[debian]
+#DebA ansible_host=109.207.171.60 ansible_port=22 ansible_user=root ansible_ssh_private_key_file=/home/tyomix/.ssh/id_rsa
+DebA ansible_host=109.207.171.60 ansible_port=10022 ansible_user=root ansible_ssh_private_key_file=/home/tyomix/.ssh/id_rsa

@@ -1,0 +1,4 @@
+  - name: Install soft
+    apt:
+      name: mc, atop, htop, ncdu
+      state: latest
